@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           
           </header>
-          <section id="apresentacao" className="min-h-screen flex items-center justify-center text-lg flex-col mt-250 row-start-2 font-light">
+          <section id="apresentacao" className="min-h-screen flex items-center justify-center text-lg flex-col mt-270 row-start-2 font-light">
               <p className="text-lg text-white-500">Oi! eu sou o</p>
               <div className="flex space-x-5">
                 <h1 className="text-center text-4xl text-yellow-500 font-light">
