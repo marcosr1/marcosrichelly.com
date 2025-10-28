@@ -50,7 +50,7 @@ export default function Nuvens() {
           }}
         >
           <FiCloud
-            className={`text-white/${nuvem.opacity}`}
+            className={`text-white/${nuvem.opacity} text-gray-400`}
             style={{ width: nuvem.size, height: nuvem.size }}
           />
         </motion.div>

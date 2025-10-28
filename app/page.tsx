@@ -18,7 +18,7 @@ export default function Home() {
     <div className="relative flex flex-col items-center justify-center w-full min-h-screen bg-gradient-to-b from-yellow-800 to-blue-800 text-white overflow-x-hidden">
       <Nuvens />
       {/* Header fixo */}
-      <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-md shadow-md flex justify-center items-center py-3">
+      <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-md shadow-md flex justify-center items-center py-3 font-mono">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3">
           {/* Ícones sociais centralizados no mobile */}
           <ul className="flex items-center justify-center w-full sm:w-auto gap-6 sm:gap-8">
