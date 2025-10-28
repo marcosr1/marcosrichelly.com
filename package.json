@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
-    "framer-motion": "^12.23.22",
+    "aos": "^3.0.0-beta.6",
+    "framer-motion": "^12.23.24",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

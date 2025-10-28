@@ -11,6 +11,16 @@ module.exports = {
         serif: ['Georgia', 'serif'],
         mono: ['Menlo', 'monospace'],
       },
+      keyframes: {
+        cloudMove: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        cloud: 'cloudMove 60s linear infinite',
+        'cloud-slow': 'cloudMove 120s linear infinite',
+      },
     },
   },
   plugins: [
