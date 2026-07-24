@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcos Richelly | Portfólio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gradient font-mono">
+  <canvas id="particles-canvas" class="particles-bg"></canvas>
+  <header class="header-fixed">
+    <div class="header-container">
+      <ul class="flex items-center gap-6">
+        <li>
+          <a href="https://www.linkedin.com/in/marcos-richelly-6bb536336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+            <i class="fa-brands fa-linkedin text-xl"></i>
+            <span class="social-text">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/marcosr1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+            <i class="fa-brands fa-github text-xl"></i>
+            <span class="social-text">GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/_chellynk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+            <i class="fa-brands fa-instagram text-xl"></i>
+            <span class="social-text">Instagram</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="subheader-fixed">
+    <div class="subheader-container">
+      <a href="#apresentacao" class="subheader-link active">Início</a>
+      <a href="#sobre" class="subheader-link">Sobre</a>
+      <a href="#stacks" class="subheader-link">Stacks</a>
+      <a href="#projetos" class="subheader-link">Projetos</a>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-container">
+
+    <!-- Hero / Apresentação -->
+    <section id="apresentacao" class="hero-section">
+      <p class="hero-sub">Oi! Eu sou o</p>
+      
+      <h1 class="hero-title">
+        <span class="text-yellow">Marcos</span> Richelly <span class="text-yellow cursor-blink">:D</span>
+      </h1>
+
+      <div class="hero-desc">
+        <p>Estudante de Ciência da Computação</p>
+        <p class="hero-highlight">e futuro Engenheiro de Software.</p>
+      </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="reveal-section card-box space-y-4">
+      <h2 class="section-title">
+        Sobre Mim
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Olá! Eu sou Marcos Richelly, estudante de <span class="text-highlight">Ciência da Computação</span>.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        Tenho facilidade em aprender e acredito que a <span class="text-highlight">maestria</span> vem com empenho, esforço e exposição constante a novos desafios.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        Estou focado no desenvolvimento web full-stack, conectando interfaces modernas no <span class="text-highlight">front-end</span> a APIs robustas no <span class="text-highlight">back-end</span>.
+      </p>
+    </section>
+
+    <!-- Seção de Stacks / Tecnologias -->
+    <section id="stacks" class="reveal-section space-y-6">
+      <h2 class="section-title-center">
+        Minhas Stacks & Tecnologias
+      </h2>
+
+      <div class="stacks-grid">
+        <!-- HTML5 -->
+        <div class="stack-card">
+          <i class="devicon-html5-plain colored text-4xl"></i>
+          <span class="stack-name">HTML5</span>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="stack-card">
+          <i class="devicon-css3-plain colored text-4xl"></i>
+          <span class="stack-name">CSS3</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="stack-card">
+          <i class="devicon-javascript-plain colored text-4xl"></i>
+          <span class="stack-name">JavaScript</span>
+        </div>
+
+        <!-- Java -->
+        <div class="stack-card">
+          <i class="devicon-java-plain colored text-4xl"></i>
+          <span class="stack-name">Java</span>
+        </div>
+
+        <!-- Python -->
+        <div class="stack-card">
+          <i class="devicon-python-plain colored text-4xl"></i>
+          <span class="stack-name">Python</span>
+        </div>
+
+        <!-- C -->
+        <div class="stack-card">
+          <i class="devicon-c-plain colored text-4xl"></i>
+          <span class="stack-name">C</span>
+        </div>
+
+        <!-- MySQL -->
+        <div class="stack-card">
+          <i class="devicon-mysql-plain colored text-4xl"></i>
+          <span class="stack-name">MySQL</span>
+        </div>
+
+        <!-- PostgreSQL -->
+        <div class="stack-card">
+          <i class="devicon-postgresql-plain colored text-4xl"></i>
+          <span class="stack-name">PostgreSQL</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-nextjs-plain colored text-4xl"></i>
+          <span class="stack-name">Next.js</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-nodejs-plain colored text-4xl"></i>
+          <span class="stack-name">Node.js</span>
+        </div>
+        
+        <div class="stack-card">
+          <i class="devicon-react-plain colored text-4xl"></i>
+          <span class="stack-name">React</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-git-plain colored text-4xl"></i>
+          <span class="stack-name">Git</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-amazonwebservices-plain colored text-4xl"></i>
+          <span class="stack-name">AWS</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-docker-plain colored text-4xl"></i>
+          <span class="stack-name">Docker</span>
+        </div>
+
+        <div class="stack-card">
+          <i class="devicon-flask-plain colored text-4xl"></i>
+          <span class="stack-name">Flask</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="reveal-section space-y-6 w-full">
+      <h2 class="section-title-center">
+        Projetos
+      </h2>
+      <div class="slider-full-width">
+        <div id="slider-container" class="slider-container">
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Portfolio Pessoal</h3>
+              <p class="card-desc">Portfólio pessoal responsivo com animações modernas e foco em performance.</p>
+              <div class="tag-container">
+                <span class="tag">JavaScript</span>
+                <span class="tag">TailwindCSS</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">CSS</span>
+              </div>
+            </div>
+            <a href="https://github.com/marcosr1/marcosrichelly.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            <a href="https://www.marcosrichelly.dev/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver Online</a>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">API de Açaí</h3>
+              <p class="card-desc">Backend em Java Spring Boot para gerenciamento e montagem de componentes de açaí.</p>
+              <div class="tag-container">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <a href="https://github.com/marcosr1/ApiAcaiteria" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Site de pedido da Açaiteria</h3>
+              <p class="card-desc">Aplicação web de pedidos de Açai redirecionando o pedido para o whatsapp da loja.</p>
+              <div class="tag-container">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/a-aiteria" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Sistema de Chamada de Alunos</h3>
+              <p class="card-desc">Este backend em Java Spring Boot gerencia a presença de alunos, histórico mensal de frequência e geração de relatórios em PDF.</p>
+              <div class="tag-container">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">iText</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/Backend-de-Sistema-de-Chamada-de-alunos" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">portfolio - LUFFEITOS</h3>
+              <p class="card-desc">Site focado na apresentação de uma marca para portfolio.</p>
+              <div class="tag-container">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/portfolioLUFFEITOS" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+              <a href="https://portfolio-luffeitos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver Online</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Sistema De Estoque</h3>
+              <p class="card-desc">Sistema de gerenciamento de estoque feito em C, focado em otimização e economia de memoria</p>
+              <div class="tag-container">
+                <span class="tag">C</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/SistemaDeEstoque" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Api de Denuncia</h3>
+              <p class="card-desc">API backend para registro de denúncias urbanas anônimas, projeto pensado para a facilitar a identificação de problemas na infraestrutura urbana de pequenas e grandes cidades</p>
+              <div class="tag-container">
+                <span class="tag">Node.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Docker</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/Denuncia-api" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Api de Autenticação</h3>
+              <p class="card-desc">API para autenticação de Token de acesso com refresh com bcrypt nas senhas </p>
+              <div class="tag-container">
+                <span class="tag">Node.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">bcryptjs</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/auth-api" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <h3 class="card-title">Organizador de Arquivos</h3>
+              <p class="card-desc">Organizador de arquivos por extensão</p>
+              <div class="tag-container">
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="https://github.com/marcosr1/Organizador-de-Arquivos-" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver no GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Final / Footer Único -->
+    <footer class="relative overflow-hidden pt-16 pb-8 border-t border-neutral-800 text-center">
+      
+      <!-- Conteúdo Principal de Chamada (CTA) -->
+      <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-4 mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white tracking-wide">
+          Vamos construir algo incrível juntos?
+        </h2>
+        <p class="text-neutral-400 max-w-md mx-auto text-sm">
+          Sinta-se à vontade para explorar meus repositórios ou entrar em contato através das redes sociais.
+        </p>
+      </div>
+
+      <!-- SVG Animado de Fundo -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+        <svg class="w-full max-w-3xl h-32" viewBox="0 0 600 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="footer-circuit-path" d="M10 50 Q 150 10, 300 50 T 590 50" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+          <path class="footer-circuit-path" d="M20 20 Q 200 90, 400 20 T 580 80" stroke="#facc15" stroke-width="2" stroke-linecap="round" />
+          <path class="footer-circuit-path" d="M50 80 Q 250 10, 450 80 T 550 20" stroke="#facc15" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!-- Direitos Autorais e Créditos (Rodapé Inferior) -->
+      <div class="relative z-10 pt-8 border-t border-neutral-800/50 max-w-4xl mx-auto px-6 text-xs text-neutral-500 space-y-1">
+        <p>© 2026 Marcos Richelly</p>
+        <p class="footer-sub">Desenvolvido com Vanilla JS, Tailwind CSS & Anime.js</p>
+      </div>
+
+    </footer>
+
+</body>
+</html>
