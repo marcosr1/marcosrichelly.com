@@ -5,19 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   heroTL
-    .add({targets: 'header', translateY: [-50, 0], opacity: [0, 1], duration: 800})
+    .add({ targets: 'header', translateY: [-50, 0], opacity: [0, 1], duration: 800 })
     .add({ targets: '.social-link', opacity: [0, 1], translateY: [-10, 0], delay: anime.stagger(100) }, '-=400')
     .add({ targets: '.hero-sub', opacity: [0, 1], translateY: [20, 0] }, '-=600')
     .add({ targets: '.hero-title', opacity: [0, 1], scale: [0.9, 1] }, '-=700')
-    .add({ targets: '.hero-desc', opacity: [0, 1], translateY: [20, 0] }, '-=600');
+    .add({ targets: '.hero-desc', opacity: [0, 1], translateY: [20, 0] }, '-=600')
+    .add({ targets: '.hero-cta', opacity: [0, 1], translateY: [20, 0] }, '-=500');
 
-  anime({ targets: '.cursor-blink', opacity: [1, 0.2], duration: 800, easing: 'easeInOutQuad', direction: 'alternate', loop: true });
+  // Respeita quem prefere menos animação (acessibilidade)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    anime({ targets: '.cursor-blink', opacity: [1, 0.2], duration: 800, easing: 'easeInOutQuad', direction: 'alternate', loop: true });
+  }
 
   const observerOptions = { threshold: 0.15 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        anime({ targets: entry.target, opacity: [0, 1], translateY: [40, 0], duration: 900, easing: 'easeOutCubic'
+        anime({
+          targets: entry.target, opacity: [0, 1], translateY: [40, 0], duration: 900, easing: 'easeOutCubic'
         });
 
         const cards = entry.target.querySelectorAll('.project-card');
@@ -35,15 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sec);
   });
 
+  // --- Carrossel de projetos ---
   const slider = document.getElementById('slider-container');
+  const prevBtn = document.getElementById('slider-prev');
+  const nextBtn = document.getElementById('slider-next');
+
   if (slider) {
     slider.innerHTML += slider.innerHTML;
     const totalWidth = slider.scrollWidth / 2;
 
     const carouselAnimation = anime({ targets: slider, scrollLeft: [0, totalWidth], duration: 35000, easing: 'linear', loop: true });
 
+    if (prefersReducedMotion) {
+      carouselAnimation.pause();
+    }
+
     slider.addEventListener('mouseenter', () => carouselAnimation.pause());
     slider.addEventListener('mouseleave', () => carouselAnimation.play());
+    slider.addEventListener('focusin', () => carouselAnimation.pause());
+    slider.addEventListener('focusout', () => { if (!prefersReducedMotion) carouselAnimation.play(); });
+
+    // Pausa também quando a aba não está visível, para economizar CPU/bateria
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        carouselAnimation.pause();
+      } else if (!prefersReducedMotion) {
+        carouselAnimation.play();
+      }
+    });
 
     let isDown = false;
     let startX;
@@ -76,12 +102,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const walk = (x - startX) * 1.5;
       slider.scrollLeft = scrollLeft - walk;
     });
+
+    // Navegação por teclado / botões
+    const scrollByCard = (direction) => {
+      const card = slider.querySelector('.project-card');
+      const cardWidth = card ? card.offsetWidth + 24 : 300; // 24px = gap
+      slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    };
+
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollByCard(1);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollByCard(-1);
+      }
+    });
   }
 
+  // --- Partículas de fundo ---
   const canvas = document.getElementById('particles-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let particles = [];
+    let animationFrameId = null;
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -90,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const particleCount = Math.min(Math.floor(window.innerWidth / 20), 50);
+    const particleCount = prefersReducedMotion ? 0 : Math.min(Math.floor(window.innerWidth / 20), 50);
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -116,11 +164,24 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = `rgba(234, 179, 8, ${p.alpha})`;
         ctx.fill();
       });
-      requestAnimationFrame(renderParticles);
+      animationFrameId = requestAnimationFrame(renderParticles);
     }
-    renderParticles();
+
+    if (particleCount > 0) {
+      renderParticles();
+
+      // Economiza CPU/bateria pausando o canvas quando a aba está em background
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        } else {
+          renderParticles();
+        }
+      });
+    }
   }
 
+  // --- Navegação suave + scroll spy ---
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.subheader-link');
 
@@ -135,7 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerOffset = 110; // Desconto dos headers fixos
         const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-        anime({ targets: [document.documentElement, document.body], scrollTop: targetPosition, duration: 900, easing: 'easeInOutCubic' });
+        if (prefersReducedMotion) {
+          window.scrollTo(0, targetPosition);
+        } else {
+          anime({ targets: [document.documentElement, document.body], scrollTop: targetPosition, duration: 900, easing: 'easeInOutCubic' });
+        }
+
+        targetSection.setAttribute('tabindex', '-1');
+        targetSection.focus({ preventScroll: true });
       }
     });
   });
@@ -156,8 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
           if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'true');
           } else {
             link.classList.remove('active');
+            link.removeAttribute('aria-current');
           }
         });
 
@@ -169,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const svgPaths = document.querySelectorAll('.footer-circuit-path');
-  if (svgPaths.length > 0) {
+  if (svgPaths.length > 0 && !prefersReducedMotion) {
     const footerObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -179,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.2 });
 
-    const footerElement = document.querySelector('footer');
+    const footerElement = document.querySelector('.footer-wrap');
     if (footerElement) footerObserver.observe(footerElement);
   }
 

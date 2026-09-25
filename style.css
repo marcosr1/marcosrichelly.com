@@ -1,4 +1,3 @@
-
 html, body {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -26,13 +25,30 @@ body.bg-gradient {
   pointer-events: none;
   opacity: 0.4;
 }
- 
-.hide-scrollbar::-webkit-scrollbar { 
-  display: none; 
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.hide-scrollbar { 
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Acessibilidade: link para pular direto ao conteúdo (aparece só com foco via teclado) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  background-color: #eab308;
+  color: #000000;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
 }
 
 .header-fixed {
@@ -92,7 +108,8 @@ body.bg-gradient {
   transition: color 0.2s ease;
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:focus-visible {
   color: #facc15;
 }
 
@@ -106,11 +123,11 @@ body.bg-gradient {
     display: inline;
   }
 }
- 
+
 .subheader-fixed {
   width: 100%;
   position: fixed;
-  top: 55px; 
+  top: 55px;
   left: 0;
   z-index: 40;
   backdrop-filter: blur(12px);
@@ -150,13 +167,14 @@ body.bg-gradient {
 }
 
 .subheader-link:hover,
+.subheader-link:focus-visible,
 .subheader-link.active {
   color: #facc15;
   background-color: rgba(234, 179, 8, 0.15);
   border-color: rgba(234, 179, 8, 0.3);
   box-shadow: 0 0 12px rgba(234, 179, 8, 0.15);
 }
- 
+
 .main-container {
   position: relative;
   z-index: 10;
@@ -181,7 +199,7 @@ body.bg-gradient {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
- 
+
 .hero-section {
   min-height: 50vh;
   display: flex;
@@ -234,7 +252,15 @@ body.bg-gradient {
   color: rgba(234, 179, 8, 0.9);
   font-weight: 500;
 }
- 
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
 .section-title {
   font-size: 1.5rem;
   color: #eab308;
@@ -273,7 +299,7 @@ body.bg-gradient {
   color: #facc15;
   font-weight: 500;
 }
- 
+
 .stacks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -310,8 +336,34 @@ body.bg-gradient {
   font-size: 0.875rem;
   font-weight: 600;
   color: #e5e7eb;
-} 
- 
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: -0.5rem;
+}
+
+.slider-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  background-color: rgba(23, 23, 23, 0.7);
+  color: #facc15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.slider-btn:hover,
+.slider-btn:focus-visible {
+  background-color: rgba(234, 179, 8, 0.15);
+  border-color: rgba(234, 179, 8, 0.6);
+}
+
 .slider-full-width {
   width: 100vw;
   position: relative;
@@ -331,13 +383,19 @@ body.bg-gradient {
   user-select: none;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  cursor: grab; 
+  cursor: grab;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .slider-container::-webkit-scrollbar {
   display: none;
+}
+
+.slider-container:focus-visible {
+  outline: 2px solid rgba(234, 179, 8, 0.6);
+  outline-offset: 4px;
+  border-radius: 0.75rem;
 }
 
 .project-card {
@@ -392,7 +450,7 @@ body.bg-gradient {
   padding: 0.25rem 0.625rem;
   border-radius: 9999px;
 }
- 
+
 .btn-primary {
   width: 100%;
   text-align: center;
@@ -407,7 +465,8 @@ body.bg-gradient {
   display: block;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus-visible {
   background-color: #ca8a04;
 }
 
@@ -425,17 +484,36 @@ body.bg-gradient {
   display: block;
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline:focus-visible {
   background-color: rgba(234, 179, 8, 0.1);
 }
- 
-.footer {
+
+/* Botões usados fora dos cards de projeto (hero e contato) — largura automática */
+.btn-inline {
+  width: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.footer-wrap {
   width: 100%;
-  padding-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 4rem;
   padding-bottom: 2rem;
   text-align: center;
-  color: #9ca3af;
-  font-size: 0.875rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(12px);

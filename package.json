@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "live-server",
     "build": "echo 'No build required'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
