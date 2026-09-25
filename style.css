@@ -8,8 +8,8 @@ body::-webkit-scrollbar {
 }
 
 body.bg-gradient {
-  background-image: linear-gradient(to bottom, #451a03, #171717, #052e16);
-  background-color: #052e16;
+  background-image: linear-gradient(to bottom, #1e1033, #0a0a0f, #000000);
+  background-color: #0a0a0f;
   color: #ffffff;
   position: relative;
   overflow-x: hidden;
@@ -40,7 +40,7 @@ body.bg-gradient {
   top: -100px;
   left: 1rem;
   z-index: 100;
-  background-color: #eab308;
+  background-color: #a78bfa;
   color: #000000;
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -90,7 +90,7 @@ body.bg-gradient {
 
 .brand-logo {
   display: none;
-  color: #eab308;
+  color: #a78bfa;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
@@ -110,7 +110,7 @@ body.bg-gradient {
 
 .social-link:hover,
 .social-link:focus-visible {
-  color: #facc15;
+  color: #c4b5fd;
 }
 
 .social-text {
@@ -169,10 +169,10 @@ body.bg-gradient {
 .subheader-link:hover,
 .subheader-link:focus-visible,
 .subheader-link.active {
-  color: #facc15;
-  background-color: rgba(234, 179, 8, 0.15);
-  border-color: rgba(234, 179, 8, 0.3);
-  box-shadow: 0 0 12px rgba(234, 179, 8, 0.15);
+  color: #c4b5fd;
+  background-color: rgba(167, 139, 250, 0.15);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.15);
 }
 
 .main-container {
@@ -249,7 +249,7 @@ body.bg-gradient {
 }
 
 .hero-highlight {
-  color: rgba(234, 179, 8, 0.9);
+  color: rgba(167, 139, 250, 0.9);
   font-weight: 500;
 }
 
@@ -263,10 +263,10 @@ body.bg-gradient {
 
 .section-title {
   font-size: 1.5rem;
-  color: #eab308;
+  color: #a78bfa;
   font-weight: 600;
   margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.2);
   padding-bottom: 0.5rem;
 }
 
@@ -278,7 +278,7 @@ body.bg-gradient {
 
 .section-title-center {
   font-size: 1.5rem;
-  color: #eab308;
+  color: #a78bfa;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -291,12 +291,12 @@ body.bg-gradient {
 }
 
 .text-yellow {
-  color: #eab308;
+  color: #a78bfa;
   font-weight: 600;
 }
 
 .text-highlight {
-  color: #facc15;
+  color: #c4b5fd;
   font-weight: 500;
 }
 
@@ -328,8 +328,8 @@ body.bg-gradient {
 
 .stack-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(234, 179, 8, 0.5);
-  box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.1);
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(167, 139, 250, 0.1);
 }
 
 .stack-name {
@@ -349,9 +349,9 @@ body.bg-gradient {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 9999px;
-  border: 1px solid rgba(234, 179, 8, 0.3);
+  border: 1px solid rgba(167, 139, 250, 0.3);
   background-color: rgba(23, 23, 23, 0.7);
-  color: #facc15;
+  color: #c4b5fd;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,8 +360,8 @@ body.bg-gradient {
 
 .slider-btn:hover,
 .slider-btn:focus-visible {
-  background-color: rgba(234, 179, 8, 0.15);
-  border-color: rgba(234, 179, 8, 0.6);
+  background-color: rgba(167, 139, 250, 0.15);
+  border-color: rgba(167, 139, 250, 0.6);
 }
 
 .slider-full-width {
@@ -393,7 +393,7 @@ body.bg-gradient {
 }
 
 .slider-container:focus-visible {
-  outline: 2px solid rgba(234, 179, 8, 0.6);
+  outline: 2px solid rgba(167, 139, 250, 0.6);
   outline-offset: 4px;
   border-radius: 0.75rem;
 }
@@ -413,7 +413,7 @@ body.bg-gradient {
 }
 
 .project-card:hover {
-  border-color: rgba(234, 179, 8, 0.5);
+  border-color: rgba(167, 139, 250, 0.5);
 }
 
 @media (min-width: 640px) {
@@ -425,7 +425,7 @@ body.bg-gradient {
 .card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #facc15;
+  color: #c4b5fd;
   margin-bottom: 0.5rem;
 }
 
@@ -443,9 +443,9 @@ body.bg-gradient {
 }
 
 .tag {
-  background-color: rgba(234, 179, 8, 0.1);
-  color: #facc15;
-  border: 1px solid rgba(234, 179, 8, 0.2);
+  background-color: rgba(167, 139, 250, 0.1);
+  color: #c4b5fd;
+  border: 1px solid rgba(167, 139, 250, 0.2);
   font-size: 0.75rem;
   padding: 0.25rem 0.625rem;
   border-radius: 9999px;
@@ -454,7 +454,7 @@ body.bg-gradient {
 .btn-primary {
   width: 100%;
   text-align: center;
-  background-color: #eab308;
+  background-color: #a78bfa;
   color: #000000;
   font-weight: 600;
   padding-top: 0.5rem;
@@ -467,14 +467,14 @@ body.bg-gradient {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background-color: #ca8a04;
+  background-color: #7c3aed;
 }
 
 .btn-outline {
   width: 100%;
   text-align: center;
-  border: 1px solid #eab308;
-  color: #facc15;
+  border: 1px solid #a78bfa;
+  color: #c4b5fd;
   font-weight: 600;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -486,7 +486,7 @@ body.bg-gradient {
 
 .btn-outline:hover,
 .btn-outline:focus-visible {
-  background-color: rgba(234, 179, 8, 0.1);
+  background-color: rgba(167, 139, 250, 0.1);
 }
 
 /* Botões usados fora dos cards de projeto (hero e contato) — largura automática */

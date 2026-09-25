@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(234, 179, 8, ${p.alpha})`;
+        ctx.fillStyle = `rgba(167, 139, 250, ${p.alpha})`;
         ctx.fill();
       });
       animationFrameId = requestAnimationFrame(renderParticles);
